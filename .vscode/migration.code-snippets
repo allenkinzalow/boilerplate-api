@@ -1,0 +1,33 @@
+{
+  "sequelize migration": {
+    "scope": "typescript",
+    "prefix": "migration",
+    "body": [
+      "import { DataTypes, QueryInterface } from \"sequelize\";",
+      "",
+      "import { $1 } from \"../models\";",
+      "",
+      "module.exports = {",
+      "  async up(queryInterface: QueryInterface) {",
+      "    await queryInterface.createTable<$1>(\"$1\", {",
+      "      /* Auto-generated */",
+      "      id: {",
+      "        type: DataTypes.BIGINT,",
+      "        allowNull: false,",
+      "        autoIncrement: true,",
+      "        primaryKey: true,",
+      "        unique: true,",
+      "      },",
+      "      createdAt: DataTypes.DATE,",
+      "      deletedAt: DataTypes.DATE,",
+      "      updatedAt: DataTypes.DATE,",
+      "    });",
+      "  },",
+      "  async down(queryInterface: QueryInterface) {",
+      "    await queryInterface.dropTable(\"$1\");",
+      "  },",
+      "};"
+    ],
+    "description": "Create a new sequelize migration"
+  }
+}
